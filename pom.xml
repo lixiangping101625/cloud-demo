@@ -17,6 +17,11 @@
         <module>domain/item/cloud-item-api</module>
         <module>domain/item/cloud-item-service</module>
         <module>domain/item/cloud-item-web</module>
+        <module>domain/user/cloud-user-pojo</module>
+        <module>domain/user/cloud-user-mapper</module>
+        <module>domain/user/cloud-user-api</module>
+        <module>domain/user/cloud-user-service</module>
+        <module>domain/user/cloud-user-web</module>
     </modules>
     <packaging>pom</packaging>
 
