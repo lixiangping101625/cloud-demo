@@ -22,6 +22,11 @@
         <module>domain/user/cloud-user-api</module>
         <module>domain/user/cloud-user-service</module>
         <module>domain/user/cloud-user-web</module>
+        <module>domain/order/cloud-order-pojo</module>
+        <module>domain/order/cloud-order-mapper</module>
+        <module>domain/order/cloud-order-api</module>
+        <module>domain/order/cloud-order-service</module>
+        <module>domain/order/cloud-order-web</module>
     </modules>
     <packaging>pom</packaging>
 
