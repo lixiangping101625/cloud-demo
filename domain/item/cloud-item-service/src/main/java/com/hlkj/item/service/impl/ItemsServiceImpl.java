@@ -27,7 +27,6 @@ import java.util.List;
 public class ItemsServiceImpl implements ItemsService {
 
     private final static Logger logger = LoggerFactory.getLogger(ItemsServiceImpl.class);
-
     @Autowired
     private ItemsMapper itemsMapper;
 
@@ -35,7 +34,6 @@ public class ItemsServiceImpl implements ItemsService {
         logger.info("hahaha");
         return itemsMapper.list();
     }
-
     public Items detail(@RequestParam(name = "id") Long id) {
         return itemsMapper.getDetail(id);
     }

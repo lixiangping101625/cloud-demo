@@ -23,7 +23,6 @@ import java.util.List;
 @RequestMapping("/items")
 @Api(value = "商品接口", tags = "商品信息展示相关接口")
 public class ItemController {
-
     @Resource
     private ItemsService itemsService;
 
@@ -32,7 +31,6 @@ public class ItemController {
     public List<Items> list(){
         return itemsService.listAll();
     }
-
     @ApiOperation(value = "查询商品详情", tags = "查询商品详情")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "id",value = "商品id", required = true)
@@ -41,5 +39,4 @@ public class ItemController {
     public Items detail(@RequestParam(name = "id") Long id){
         return itemsService.detail(id);
     }
-
 }
