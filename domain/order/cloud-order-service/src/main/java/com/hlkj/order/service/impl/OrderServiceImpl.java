@@ -1,7 +1,9 @@
 package com.hlkj.order.service.impl;
 
 import com.hlkj.order.mapper.OrderMapper;
+import com.hlkj.order.service.OrderService;
 import com.hlkj.user.pojo.User;
+import com.hlkj.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import order.pojo.Order;
 import order.vo.OrderVO;
@@ -9,12 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-import com.hlkj.order.service.OrderService;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -29,10 +27,13 @@ import java.util.List;
 @Slf4j
 public class OrderServiceImpl implements OrderService {
     private final static Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
+//    @Resource
+//    private RestTemplate restTemplate;//发起服务调用 //todo feign章节改为服务接口调用
+//    @Resource
+//    private LoadBalancerClient client;//找寻服务地址 //todo feign章节改为服务接口调用
     @Resource
-    private RestTemplate restTemplate;//发起服务调用 //todo feign章节改为服务接口调用
-    @Resource
-    private LoadBalancerClient client;//找寻服务地址 //todo feign章节改为服务接口调用
+    private UserService userService;
+
     @Autowired
     private OrderMapper orderMapper;
     @Override
@@ -44,12 +45,14 @@ public class OrderServiceImpl implements OrderService {
     public OrderVO detail(@RequestParam(name = "id") Long id) {
         Order order = orderMapper.getDetail(id);
         Long userId = order.getUserId();
-        ServiceInstance instance = client.choose("CLOUD-USER-SERVICE");
-        String target = String.format("http://%s:%s/users-api/info?id=%s",
-                instance.getHost(),
-                instance.getPort(),
-                userId);
-        User user = restTemplate.getForObject(target, User.class);
+//        ServiceInstance instance = client.choose("CLOUD-USER-SERVICE");
+//        String target = String.format("http://%s:%s/users-api/info?id=%s",
+//                instance.getHost(),
+//                instance.getPort(),
+//                userId);
+//        User user = restTemplate.getForObject(target, User.class);
+        User user = userService.detail(userId);
+
         OrderVO orderVO = new OrderVO();
         BeanUtils.copyProperties(order, orderVO);
         orderVO.setUserId(userId);

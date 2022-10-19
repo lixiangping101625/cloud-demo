@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: cloud-order-service
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     # 拆分数据源到独立database instance或者schema
     url: jdbc:mysql://127.0.0.1:3307/cloud-mall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
