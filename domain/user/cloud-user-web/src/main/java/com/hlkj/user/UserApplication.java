@@ -14,7 +14,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient // 表示到注册中心拉去服务注册列表
 @MapperScan(basePackages = "com.hlkj.user.mapper")
-// TODO feign注解
+// TODO feign注解 这里没有调用其他服务，所以不需要
 public class UserApplication {
 
     public static void main(String[] args) {
