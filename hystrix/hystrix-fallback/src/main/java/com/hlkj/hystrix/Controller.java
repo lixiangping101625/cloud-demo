@@ -2,6 +2,7 @@ package com.hlkj.hystrix;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,6 +19,11 @@ public class Controller {
     @GetMapping("/fallback")
     public String fallback(){
         return myService.error();
+    }
+
+    @GetMapping("/timeout")
+    public String timeout(@RequestParam("count") Integer count){
+        return myService.timeout(count);
     }
 
 }

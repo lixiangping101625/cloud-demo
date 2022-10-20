@@ -39,4 +39,17 @@ public class UserServiceImpl implements UserService {
     public String error() {
         throw new RuntimeException("black sheep");
     }
+
+    @Override
+    public String timeout(Integer count) {
+        //线程挂起，模拟接口超时
+        while (--count > 0) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return "success";
+    }
 }
