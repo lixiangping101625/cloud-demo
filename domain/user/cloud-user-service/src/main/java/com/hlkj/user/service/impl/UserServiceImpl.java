@@ -42,6 +42,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String timeout(Integer count) {
+        log.info("进入cloud-user-api的timeout方法");
         //线程挂起，模拟接口超时
         while (--count > 0) {
             try {
