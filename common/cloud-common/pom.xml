@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>cloud-common</artifactId>
-    <description>公共包何依赖的组件</description>
+    <description>公共包和依赖的组件</description>
 
     <dependencies>
         <!--spring-boot-starter启动spring boot使用-->

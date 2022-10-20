@@ -105,15 +105,15 @@
 <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
 <!--            <version>1.2.12</version>-->
 <!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--        </dependency>-->
 
 
         <!--
             以下是公共的
         -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
