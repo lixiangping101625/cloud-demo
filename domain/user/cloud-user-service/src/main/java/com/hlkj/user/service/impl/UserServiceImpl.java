@@ -6,10 +6,10 @@ import com.hlkj.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -23,7 +23,8 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-    @Autowired
+
+    @Resource
     private UserMapper userMapper;
 
     public List<User> listAll() {
@@ -32,5 +33,10 @@ public class UserServiceImpl implements UserService {
     }
     public User detail(@RequestParam(name = "id") Long id) {
         return userMapper.getDetail(id);
+    }
+
+    @Override
+    public String error() {
+        throw new RuntimeException("black sheep");
     }
 }

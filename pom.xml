@@ -27,6 +27,7 @@
         <module>domain/order/cloud-order-api</module>
         <module>domain/order/cloud-order-service</module>
         <module>domain/order/cloud-order-web</module>
+        <module>hystrix/hystrix-fallback</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -24,4 +24,7 @@ public interface UserService {
 
     @GetMapping("info")
     User detail(@RequestParam(name = "id") Long id);
+
+    @GetMapping("fallback")
+    String error();
 }
