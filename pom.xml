@@ -30,6 +30,8 @@
         <module>hystrix/hystrix-fallback</module>
         <module>hystrix/hystrix-turbine</module>
         <module>hystrix/hystrix-dashboard</module>
+        <module>platform/hytrix-turbine2</module>
+        <module>platform/hystrix-dashboard2</module>
     </modules>
     <packaging>pom</packaging>
 

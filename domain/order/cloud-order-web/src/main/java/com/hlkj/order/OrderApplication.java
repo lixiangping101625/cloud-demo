@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient // 表示到注册中心拉去服务注册列表
 @MapperScan(basePackages = "com.hlkj.order.mapper")
 @EnableFeignClients(basePackages = "com.hlkj.user.service")//feign扫包路径
+@EnableCircuitBreaker
 public class OrderApplication {
 
     @Bean

@@ -22,6 +22,12 @@
             <artifactId>cloud-item-mapper</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!--hystrix监控依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
